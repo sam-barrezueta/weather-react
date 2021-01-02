@@ -1,38 +1,45 @@
-.App {
+body {
+  font-family: "Ubuntu", sans-serif;
+  color: rgba(16, 102, 151, 0.75);
+}
+
+.Forecast h5 {
+  margin: 0;
+}
+
+hr {
+  border: none;
+  border-top: dotted #a6cbdd 5px;
+  width: 10%;
+  margin: 0 auto;
+}
+
+.app-card {
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 500px;
+  background-image: linear-gradient(to top, #ace0f9 20%, #fff1eb 80%);
+}
+
+.footer {
+  width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+
+#forecast {
   text-align: center;
+  margin-top: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#forecast-icon {
+  position: relative;
+  right: 11px;
+  width: 75px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#forecast-temp {
+  font-size: 13px;
+  text-align: center;
 }
