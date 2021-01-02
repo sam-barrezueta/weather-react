@@ -1,6 +1,5 @@
 import React from "react";
 import Search from "./Search";
-import Weather from "./Weather";
 import Forecast from "./Forecast";
 
 import "./App.css";
@@ -12,7 +11,6 @@ export default function App() {
         <div className="card app-card">
           <div className="card-body">
             <Search />
-            <Weather />
             <Forecast />
           </div>
         </div>
