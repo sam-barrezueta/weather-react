@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import Daylight from "./Daylight";
+import WeatherIcon from "./WeatherIcon";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -20,12 +21,8 @@ export default function Weather(props) {
         </div>
 
         <div className="row current-temperature">
-          <img
-            src= {props.data.icon}
-            alt={props.data.description}
-            className="col-4 weather-icon"
-          />
-          <ul className="col-8 weather-details">
+          <WeatherIcon code={props.data.icon} />
+          <ul className="col-6 weather-details">
             <li>Humidity: {props.data.humidity}%</li>
             <li>Wind: {props.data.wind} km/ph</li>
           </ul>
