@@ -2,6 +2,7 @@ import React from "react";
 import FormattedDate from "./FormattedDate";
 import Daylight from "./Daylight";
 import WeatherIcon from "./WeatherIcon";
+import Temperature from "./Temperature";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -27,14 +28,7 @@ export default function Weather(props) {
             <li>Wind: {props.data.wind} km/ph</li>
           </ul>
           <h2 className="col-6">
-            {Math.round(props.data.temperature)}
-            <a href="/" className="unit active">
-              °C
-            </a>{" "}
-            <span className="unit">|</span>{" "}
-            <a href="/" className="unit">
-              °F
-            </a>
+            <Temperature celsius={props.data.temperature} />
           </h2>
           <h3 className="col-6 description">{props.data.description}</h3>
         </div>

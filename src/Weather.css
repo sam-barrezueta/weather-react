@@ -41,17 +41,6 @@
   bottom: 35px;
 }
 
-.Weather .active {
-  color: rgba(16, 102, 151, 0.75);
-  cursor: default;
-  font-weight: bold;
-}
-
-.Weather .active:hover {
-  text-decoration: none;
-  color: rgba(16, 102, 151, 0.75);
-}
-
 .Weather .weather-details {
   text-align: left;
   position: relative;

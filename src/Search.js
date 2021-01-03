@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Weather from "./Weather";
 import axios from "axios";
-// import Loader from 'react-loader-spinner';
 import "./Search.css";
 
 export default function Search(props) {
