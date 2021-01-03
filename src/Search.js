@@ -5,34 +5,41 @@ import axios from "axios";
 import Loader from 'react-loader-spinner'
 import "./Search.css";
 
-export default function Search() {
+export default function Search(props) {
   let [ready, setReady] = useState(false);
-  let [city, setCity] = useState(null);
+  let [city, setCity] = useState(props.defaultCity);
   let [weatherData, setWeatherData] = useState({});
 
   function showWeather(response){
     setWeatherData({
       city: response.data.name,
       temperature: response.data.main.temp,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      date: response.data.dt,
       description: response.data.weather[0].description,
+      date: response.data.dt,
       sunrise: response.data.sys.sunrise + response.data.timezone,
       sunset: response.data.sys.sunset + response.data.timezone
-        });
+    });
   }
 
+
+  
   function handleSubmit(event){
     event.preventDefault();
-    setReady(true);
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=aef650f4f97d6be4e2588d635fe74f28&units=metric`;
-    axios.get(apiUrl).then(showWeather);
+    handleSearch(city);
   }
 
   function updateCity(event) {
     setCity(event.target.value);
   }
+
+  function handleSearch() {
+  setReady(true);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=aef650f4f97d6be4e2588d635fe74f28&units=metric`;
+  axios.get(apiUrl).then(showWeather);  
+}
   
   let form = (<form className="mb-3" onSubmit={handleSubmit}>
         <div className="row">
@@ -85,8 +92,8 @@ export default function Search() {
 
         <div className="row current-temperature">
           <img
-            src="http://openweathermap.org/img/wn/10d@2x.png"
-            alt="description"
+            src= {weatherData.icon}
+            alt={weatherData.description}
             className="col-4 weather-icon"
           />
           <ul className="col-8 weather-details">
@@ -109,19 +116,7 @@ export default function Search() {
       </div>
       );
   } else {
-    return (
-      <div className="Search">
-        {form}
-        <h2>
-      <Loader
-         type="ThreeDots"
-         color="grey"
-         height={100}
-         width={50}
-      />
-        </h2>
-        <hr />
-      </div>
-    );
+    handleSearch();
+    return "Loading";
   }
 }

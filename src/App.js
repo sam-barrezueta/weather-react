@@ -10,12 +10,12 @@ export default function App() {
       <div className="container">
         <div className="card app-card">
           <div className="card-body">
-            <Search />
+            <Search defaultCity="London"/>
             <Forecast />
           </div>
         </div>
         <div className="footer">
-          <a href="https://github.com/sam-barrezueta/weather-react">
+          <a href="https://github.com/sam-barrezueta/weather-react" target="_blank" rel="noopener noreferrer">
             Open-source code {" "}
           </a>
           by Sam Barrezueta
