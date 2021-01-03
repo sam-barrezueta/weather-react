@@ -18,8 +18,8 @@ export default function Search() {
       wind: response.data.wind.speed,
       date: response.data.dt,
       description: response.data.weather[0].description,
-      sunrise: response.data.sys.sunrise,
-      sunset: response.data.sys.sunset
+      sunrise: response.data.sys.sunrise + response.data.timezone,
+      sunset: response.data.sys.sunset + response.data.timezone
         });
   }
 
