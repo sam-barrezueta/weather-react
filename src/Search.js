@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Weather from "./Weather";
+
 import axios from "axios";
 import "./Search.css";
 
@@ -18,7 +19,9 @@ export default function Search(props) {
       description: response.data.weather[0].description,
       date: response.data.dt,
       sunrise: response.data.sys.sunrise + response.data.timezone,
-      sunset: response.data.sys.sunset + response.data.timezone
+      sunset: response.data.sys.sunset + response.data.timezone,
+      lat: response.data.coord.lat,
+      lon: response.data.coord.lon,
     });
   }
   
@@ -74,7 +77,6 @@ export default function Search(props) {
       <div className="Search">
         {form}
         <Weather data={weatherData} />
-        <hr />
       </div>
       );
   } else {

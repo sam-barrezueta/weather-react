@@ -3,6 +3,8 @@ import FormattedDate from "./FormattedDate";
 import Daylight from "./Daylight";
 import WeatherIcon from "./WeatherIcon";
 import Temperature from "./Temperature";
+import Forecast from "./Forecast";
+
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -22,7 +24,10 @@ export default function Weather(props) {
         </div>
 
         <div className="row current-temperature">
-          <WeatherIcon code={props.data.icon} />
+        <div className="col-4">
+            <WeatherIcon code={props.data.icon} size={78} />  
+        </div>
+         
           <ul className="col-6 weather-details">
             <li>Humidity: {props.data.humidity}%</li>
             <li>Wind: {props.data.wind} km/ph</li>
@@ -31,7 +36,9 @@ export default function Weather(props) {
             <Temperature celsius={props.data.temperature} />
           </h2>
           <h3 className="col-6 description">{props.data.description}</h3>
-        </div>
+        </div>        
+        <hr />
+        <Forecast data={props.data} />
         </div>
     );
 }
