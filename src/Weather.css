@@ -54,6 +54,8 @@
 }
 
 .Weather canvas {
+  display: block;
+  margin: 0 auto;
   position: relative;
   top: 10px;
   left: 25px;

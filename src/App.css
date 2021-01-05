@@ -27,19 +27,3 @@ hr {
   display: block;
   margin: 0 auto;
 }
-
-#forecast {
-  text-align: center;
-  margin-top: 30px;
-}
-
-#forecast-icon {
-  position: relative;
-  right: 11px;
-  width: 75px;
-}
-
-#forecast-temp {
-  font-size: 13px;
-  text-align: center;
-}

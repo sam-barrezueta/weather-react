@@ -1,4 +1,20 @@
-canvas {
+.DailyForecast {
   display: block;
-  margin: 10px 0;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.DailyForecast p {
+  text-align: center;
+  font-size: 14px;
+}
+
+.DailyForecast h5 {
+  font-size: 18px;
+  text-align: center;
+}
+
+.DailyForecast .ForecastIcon {
+  position: relative;
+  right: 25px;
 }

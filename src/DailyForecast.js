@@ -8,9 +8,11 @@ export default function DailyForecast(props) {
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", ]
     let day = days[date.getDay()];
     return (
-        <div className="col-2">
+        <div className="DailyForecast col-2">
           <h5>{day}</h5>
+            <span className="ForecastIcon">
             <WeatherIcon code={props.data.weather[0].icon} size={38} />
+            </span>
           <p> 
             {Math.round(props.data.temp.max)}° | {Math.round(props.data.temp.min)}°
           </p>

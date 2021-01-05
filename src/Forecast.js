@@ -11,7 +11,7 @@ function handleForecastResponse(response){
   setForecast(response.data);
   setReady(true);
 }
-  if (ready){
+  if (ready && props.data.lat === forecast.lat && props.data.lon === forecast.lon){
   return (
     <div className="Forecast row">
       <DailyForecast data={forecast.daily[1]} />
@@ -20,7 +20,6 @@ function handleForecastResponse(response){
       <DailyForecast data={forecast.daily[4]} />
       <DailyForecast data={forecast.daily[5]} />
       <DailyForecast data={forecast.daily[6]} />
-
     </div>
   );    
   } else {
