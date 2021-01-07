@@ -25,6 +25,18 @@ export default function Search(props) {
       lon: response.data.coord.lon,
     });
   }
+
+  function handleCoordinates(position) {
+    let currentLat = position.coords.latitude;
+    let currentLon = position.coords.longitude;
+    let geoApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${currentLat}&lon=${currentLon}&appid=aef650f4f97d6be4e2588d635fe74f28&units=metric`
+    axios.get(geoApiUrl).then(showWeather);
+  }
+
+  function handleLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(handleCoordinates);
+  }
   
   function handleSubmit(event){
     event.preventDefault();
@@ -64,7 +76,7 @@ export default function Search(props) {
           <div className="col-1 search-button">
             <button
               type="button"
-              className="btn btn-outline-secondary current-city-btn"
+              className="btn btn-outline-secondary current-city-btn" onClick={handleLocation}
             >
               <i className="fas fa-location-arrow"></i>
             </button>
