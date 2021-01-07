@@ -21,7 +21,7 @@ export default function DailyForecast(props) {
             <WeatherIcon code={props.data.weather[0].icon} size={38} />
             </span>
           <p> 
-            <strong>{fahrenheitMax}°</strong> | {fahrenheitMin}° F
+            <strong>{fahrenheitMax}</strong> | {fahrenheitMin} °F
           </p>
         </div> 
     );      
@@ -34,7 +34,7 @@ export default function DailyForecast(props) {
             <WeatherIcon code={props.data.weather[0].icon} size={38} />
             </span>
           <p> 
-            <strong>{celsiusMax}°</strong> | {celsiusMin}° C
+            <strong>{celsiusMax}</strong> | {celsiusMin} °C
           </p>
         </div> 
     );      
