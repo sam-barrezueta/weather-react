@@ -6,11 +6,13 @@ export default function Temperature(props) {
     function showFahrenheit(event){
         event.preventDefault();
         setUnit('fahrenheit');
+        props.setForecastUnit("imperial");
     }
 
     function showCelsius(event){
         event.preventDefault();
         setUnit('celsius');
+        props.setForecastUnit("metric")
     }
 
     if (unit === 'celsius') {

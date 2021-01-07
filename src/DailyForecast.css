@@ -7,6 +7,7 @@
 .DailyForecast p {
   text-align: center;
   font-size: 14px;
+  width: 100%;
 }
 
 .DailyForecast h5 {
@@ -17,4 +18,8 @@
 .DailyForecast .ForecastIcon {
   position: relative;
   right: 25px;
+}
+
+.DailyForecast .col-2 {
+  padding: 0;
 }

@@ -33,12 +33,12 @@ export default function Weather(props) {
             <li>Wind: {props.data.wind} km/ph</li>
           </ul>
           <h2 className="col-6">
-            <Temperature celsius={props.data.temperature} />
+            <Temperature celsius={props.data.temperature} forecastUnit={props.forecastUnit} setForecastUnit={props.setForecastUnit}/>
           </h2>
           <h3 className="col-6 description">{props.data.description}</h3>
         </div>        
         <hr />
-        <Forecast data={props.data} />
+        <Forecast data={props.data} forecastUnit={props.forecastUnit} />
         </div>
     );
 }

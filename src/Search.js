@@ -8,6 +8,7 @@ export default function Search(props) {
   let [ready, setReady] = useState(false);
   let [city, setCity] = useState(props.defaultCity);
   let [weatherData, setWeatherData] = useState({});
+  let [forecastUnit, setForecastUnit] = useState("metric")
 
   function showWeather(response){
     setWeatherData({
@@ -76,7 +77,7 @@ export default function Search(props) {
       return (
       <div className="Search">
         {form}
-        <Weather data={weatherData} />
+        <Weather data={weatherData} forecastUnit={forecastUnit} setForecastUnit={setForecastUnit} />
       </div>
       );
   } else {
