@@ -6,7 +6,7 @@ export default function Wind(props) {
 
     if (props.forecastUnit === "imperial") {
      return(
-        <li>Wind: {imperialWind} km/ph</li>
+        <li>Wind: {imperialWind} m/ph</li>
     );       
     } else {
      return(
