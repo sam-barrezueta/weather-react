@@ -4,6 +4,7 @@ import Daylight from "./Daylight";
 import WeatherIcon from "./WeatherIcon";
 import Temperature from "./Temperature";
 import Forecast from "./Forecast";
+import Wind from "./Wind";
 
 import "./Weather.css";
 
@@ -30,7 +31,7 @@ export default function Weather(props) {
          
           <ul className="col-6 weather-details">
             <li>Humidity: {props.data.humidity}%</li>
-            <li>Wind: {props.data.wind} km/ph</li>
+            <Wind data={props.data} forecastUnit={props.forecastUnit} />
           </ul>
           <h2 className="col-6">
             <Temperature celsius={props.data.temperature} forecastUnit={props.forecastUnit} setForecastUnit={props.setForecastUnit}/>
